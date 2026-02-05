@@ -12,17 +12,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"io.github.fabiomacieira.Repository, " +
-                                "io.github.fabiomacieira.service"})
+@ComponentScan(basePackages = {"io.github.fabiomacieira.Repository", 
+                                "io.github.fabiomacieira.service", 
+                                "io.github.fabiomacieira"})
 @RestController
 public class VendasApplication {
 
     @Value("${application.name}")
     private String applicationName;
 
-    @Autowired
-    //@Qualifier("gato")
-    @Gato
+    //@Autowired
+    //@Qualifier("cachorro")
+    @Cachorro
     private Animal animal;
 
     @Bean(name = "executarAnimal")
