@@ -1,7 +1,9 @@
 package io.github.fabiomacieira;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -19,10 +21,11 @@ public class VendasApplication {
     private String applicationName;
 
     @Autowired
+    //@Qualifier("gato")
     @Gato
     private Animal animal;
 
-    @Bean
+    @Bean(name = "executarAnimal")
     public CommandLineRunner execultar(){
         return args -> {
             this.animal.fazerBarulho();
