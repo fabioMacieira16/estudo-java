@@ -1,4 +1,8 @@
 package io.github.fabiomacieir.clientes.model.repository;
 
-public interface ClienteRepository {
+import io.github.fabiomacieir.clientes.model.entity.Cliente;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ClienteRepository extends JpaRepository<Cliente, Integer> {
+
 }
